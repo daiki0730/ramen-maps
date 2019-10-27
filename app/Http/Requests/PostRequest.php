@@ -25,6 +25,15 @@ class PostRequest extends FormRequest
     {
         return [
             //
+            'title' => 'required|min:3',
+            'image' => 'required',
+            'body' => 'required'
         ];
+    }
+
+    public function messages() {
+      return [
+        'title.required' => 'please enter!!!'
+      ];
     }
 }
