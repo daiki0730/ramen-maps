@@ -13,6 +13,9 @@
     <input type="text" name="title" placeholder="enter title">
   </p>
   <p>
+    <input type="file" name="image" value="">
+  </p>
+  <p>
     <textarea name="body" placeholder="enter body"></textarea>
   </p>
   <p>
