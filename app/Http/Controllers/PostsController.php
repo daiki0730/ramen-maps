@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Http\Requests\PostRequest;
 
 class PostsController extends Controller
 {
@@ -20,16 +21,11 @@ class PostsController extends Controller
       return view('posts.create');
     }
 
-    public function store(Request $request) {
-      $this->validate($request, [
-        'title' => 'required|min:3',
-        'image' => 'required',
-        'body' => 'required'
-      ]);
+   public function store(PostRequest $request) {
       $post = new Post();
       $post->title = $request->title;
-      $post->body = $request->body;
       $post->image = $request->image;
+      $post->body = $request->body;
       $post->save();
       return redirect('/');
     }
@@ -38,14 +34,12 @@ class PostsController extends Controller
       return view('posts.edit')->with('post', $post);
     }
 
-    public function update(Request $request, Post $post) {
-      $this->validate($request, [
-        'title' => 'required|min:3',
-        'body' => 'required'
-      ]);
+    public function update(PostRequest $request, Post $post) {
       $post->title = $request->title;
+      $post->image = $request->image;
       $post->body = $request->body;
       $post->save();
       return redirect('/');
     }
+
 }
