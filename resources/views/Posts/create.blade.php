@@ -17,6 +17,9 @@
   </p>
   <p>
     <input type="file" name="image" value="">
+    @if ($errors->has('image'))
+    <span class="error">{{ $errors->first('image') }}</span>
+    @endif
   </p>
   <p>
     <textarea name="body" placeholder="enter body">{{ old('body') }}</textarea>
