@@ -20,4 +20,13 @@ class PostsController extends Controller
       return view('posts.create');
     }
 
+    public function store(Request $request) {
+      $post = new Post();
+      $post->title = $request->title;
+      $post->body = $request->body;
+      $post->image = $request->image;
+      $post->save();
+      return redirect('/');
+    }
+
 }
