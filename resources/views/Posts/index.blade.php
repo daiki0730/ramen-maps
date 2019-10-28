@@ -3,6 +3,14 @@
 @section('title', 'Blog Posts')
 
 @section('content')
+
+@if (Auth::check())
+<p>USER: {{$user->name . ' (' . $user->email . ')'}}</p>
+@else
+<p>※ログインしてません(<a href="/login">ログイン</a>|
+  <a href="/legister">登録</a>)
+@endif
+
 <h1>
   <a href="{{ url('/posts/create') }}" class="header-menu">New Post</a>
   Blog Posts
