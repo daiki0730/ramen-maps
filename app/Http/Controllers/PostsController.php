@@ -22,7 +22,7 @@ class PostsController extends Controller
       return view('posts.create');
     }
 
-   public function store(PostRequest $request) {
+    public function store(PostRequest $request) {
       $post = new Post();
       $post->title = $request->title;
       $post->image = $request->image;
