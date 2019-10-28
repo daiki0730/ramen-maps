@@ -8,7 +8,7 @@
 <p>USER: {{$user->name . ' (' . $user->email . ')'}}</p>
 @else
 <p>※ログインしてません(<a href="/login">ログイン</a>|
-  <a href="/legister">登録</a>)
+  <a href="/register">登録</a>)
 @endif
 
 <h1>
