@@ -11,4 +11,9 @@ class User extends \Eloquent implements Authenticatable
     //
     use AuthenticableTrait;
     protected $fillable = ['name','email','email_varified_at','password'];
+
+  public function post() {
+    return $this->hasMany('App\Post');
+  }
+
 }
