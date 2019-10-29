@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
+
+
     public function index() {
       $user = Auth::user();
       $posts = Post::latest()->get();

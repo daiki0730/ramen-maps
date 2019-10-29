@@ -5,16 +5,17 @@
 @section('content')
 
 @if (Auth::check())
-<p>USER: {{$user->name . ' (' . $user->email . ')'}}</p>
+  <p>USER: {{$user->name . ' (' . $user->email . ')'}}</p>
 @else
-<p>※ログインしてません(<a href="/login">ログイン</a>|
-  <a href="/register">登録</a>)
+  <p>※ログインしてません(<a href="/login">ログイン</a>|
+    <a href="/register">登録</a>)
 @endif
 
 <h1>
   <a href="{{ url('/posts/create') }}" class="header-menu">New Post</a>
   Blog Posts
 </h1>
+
 <ul>
   @forelse ($posts as $post)
   <li>
@@ -30,5 +31,7 @@
   <li>No posts yet</li>
   @endforelse
 </ul>
+
 <script src="/js/main.js"></script>
+
 @endsection
